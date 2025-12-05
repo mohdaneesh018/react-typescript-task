@@ -3,8 +3,7 @@ import Login from "../pages/Login";
 import Landing from "../pages/Landing";
 import NotFound from "../pages/NotFound";
 import { useAuth } from "../context/AuthContext";
-
-// Protected Route Component
+ 
 function ProtectedRoute({ children }: { children: JSX.Element }) {
     const { isLoggedIn } = useAuth();
     return isLoggedIn ? children : <Navigate to="/login" replace />;
@@ -12,11 +11,9 @@ function ProtectedRoute({ children }: { children: JSX.Element }) {
 
 export default function AppRoutes() {
     return (
-        <Routes>
-            {/* Public Route */}
+        <Routes> 
             <Route path="/login" element={<Login />} />
-
-            {/* Protected Route */}
+ 
             <Route
                 path="/"
                 element={
@@ -25,8 +22,7 @@ export default function AppRoutes() {
                     </ProtectedRoute>
                 }
             />
-
-            {/* Not Found Page */}
+ 
             <Route path="*" element={<NotFound />} />
         </Routes>
     );

@@ -18,8 +18,7 @@ export default function Landing() {
 
     return (
         <div className="bg-gray-900 text-white flex flex-col min-h-screen">
-
-            {/* Logout Button */}
+ 
             <div className="flex justify-end p-4">
                 <button
                     onClick={logout}
@@ -28,15 +27,13 @@ export default function Landing() {
                     Logout
                 </button>
             </div>
-
-            {/* Banner Section (full width always) */}
+ 
             <Banner
                 title={bannerData.title}
                 subtitle={bannerData.subtitle}
                 buttonText={bannerData.buttonText}
             />
-
-            {/* Contact Section */}
+ 
             <div className="flex-grow flex justify-center items-start py-10 px-4">
                 <div className="w-full max-w-xl">
                     <ContactForm onSubmit={updateContactFormData} />
